@@ -1,26 +1,204 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="X-UA-Compatible" content="ie=edge"><title>Task Manager</title><meta name="title" content="My portfolio"><meta name="description" content="Here you can see my works and learn more about me"><!-- Favicon  --><!-- <link rel="apple-touch-icon" sizes="57x57" href="icons/favicon//apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="icons/favicon//apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="icons/favicon//apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="icons/favicon//apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="icons/favicon//apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="icons/favicon//apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="icons/favicon//apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="icons/favicon//apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="icons/favicon//apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="icons/favicon//android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon//favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="icons/favicon//favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon//favicon-16x16.png">
-    <link rel="manifest" href="icons/favicon//manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="icons/favicon//ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff"> --><link rel="stylesheet" href="css/style.min.css"></head><body class=""><nav class="nav"><a class="nav__logo" href="/"><img class="nav__logo-img" src="icons/logo-black.png" alt="logo"></a><div class="nav__theme-switcher"><input id="theme-switcher" type="checkbox" class="nav__theme-switcher-input"> <label for="theme-switcher" class="nav__theme-switcher-label"><i class="nav__theme-switcher-sun" aria-hidden="true"><img src="icons/sun.svg" alt="sun"> </i><i class="nav__theme-switcher-moon" aria-hidden="true"><img src="icons/moon.svg" alt="moon"></i></label></div><div class="nav__links"><a href="#" class="btn btn-signin nav__links-signin">Sign in</a> <a href="#" class="btn btn-signup nav__links-signup">Sign up</a></div></nav><section class="promo"><div class="container"><h1 class="title promo__title">Task Tracker App.</h1><h2 class="promo__subtitle">Effortlessly Organize Your Day: Supercharge Productivity with Our Task Tracker App! Enjoy the power of our task management, calendar, focus time tracker, statistics, blog, and even weather app, all in one place. Take control of your day and maximize productivity with our task tracker app!</h2><div class="promo__links"><a href="#" class="btn btn-start promo__links-start">Get started!</a> <a href="#" class="btn btn-about promo__links-about">Learn more</a></div><div class="promo__timer"><div class="promo__timer-title">We are opened soon!!!</div><div class="promo__timer-wrapper"><div class="promo__timer-block"><span id="days">99</span> days</div><div class="promo__timer-block"><span id="hours">99</span> hours</div><div class="promo__timer-block"><span id="minutes">99</span> minutes</div><div class="promo__timer-block"><span id="seconds">99</span> seconds</div></div></div><!-- <label for="">
-          <input id="darkMode" type="checkbox">Dark mode
-        </label> --><!-- <div class="promo__examples">
-          <div class="promo__examples_phone">
-            <img src="img/mainpage/promo-phone.png" alt="phone-promo" class="promo__examples_phone-img">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather App</title>
+    <meta name="title" content="My portfolio">
+    <meta name="description" content="Here you can see my works and learn more about me">
+
+    <link rel="stylesheet" href="css/style.min.css">
+  </head>
+
+  <body>
+    <!-- <nav class="nav">
+      <a class="nav__logo" href="/">
+        <img class="nav__logo-img" src="icons/assets/logo/logo-black.png" alt="logo">
+      </a>
+      <div class="nav__links">
+        <a href="#" class="btn btn-signin nav__links-signin">Sign in</a>
+        <a href="#" class="btn btn-signup nav__links-signup">Sign up</a>
+      </div>
+    </nav> -->
+
+    <aside class="aside closed">
+      <div class="aside__wrapper aside__wrapper-start">
+        <div id="themeSwitcher" href="" class="aside__item-link">
+          <img src="icons/aside/sun.svg" alt="icoTheme">
+          <div class="aside__item-text">Light Mode</div>
+          <span>Light Mode</span>
+        </div>
+      </div>
+      <div class="aside__wrapper aside__wrapper-center">
+        <a href="" class="aside__item-link">
+          <img src="icons/aside/icoNews.png" alt="icoNews">
+          <div class="aside__item-text">News</div>
+          <span>News</span>
+        </a>
+        <a href="" class="aside__item-link">
+          <img src="icons/aside/icoTask.png" alt="icoTask">
+          <div class="aside__item-text">Tasks</div>
+          <span>Tasks</span>
+        </a>
+        <a href="" class="aside__item-link">
+          <img src="icons/aside/icoCalendar.png" alt="icoCalendar">
+          <div class="aside__item-text">Calendar</div>
+          <span>Calendar</span>
+        </a>
+        <a href="" class="aside__item-link">
+          <img src="icons/aside/icoTimer.png" alt="icoTimer">
+          <div class="aside__item-text">Focus Timer</div>
+          <span>Focus Timer</span>
+        </a>
+        <a href="" class="aside__item-link">
+          <img src="icons/aside/icoStat.png" alt="icoStat">
+          <div class="aside__item-text">Statistics</div>
+          <span>Statistics</span>
+        </a>
+        <a href="" class="aside__item-link">
+          <img src="icons/aside/icoWeather.png" alt="icoWeather">
+          <div class="aside__item-text">Weather</div>
+          <span>Weather</span>
+        </a>
+      </div>
+      <div class="aside__wrapper aside__wrapper-end">
+        <a href="" class="aside__item-link">
+          <img src="icons/aside/icoSettings.png" alt="icoSettings">
+          <div class="aside__item-text">Settings</div>
+          <span>Settings</span>
+        </a>
+        <a href="" class="aside__item-link">
+          <img src="icons/aside/icoLogout.png" alt="icoLogout">
+          <div class="aside__item-text">Log Out</div>
+          <span>Log Out</span>
+        </a>
+      </div>
+      <div class="aside__swipe">
+        <img src="icons/aside/arrowRight.png" alt="swipeArrow" class="aside__swipe-img">
+      </div>
+    </aside>
+
+    <section class="weather">
+      <div class="container">
+        <div class="weather__search">
+          <input type="text" class="weather__search-input" placeholder="Ex. Kyiv..">
+          <button class="btn weather__search-btn">
+            <svg width="32px" height="32px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none">
+              <path stroke="#535358" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M28 27l-7.5-7.5"/>
+              <circle r="9" stroke="#535358" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" transform="matrix(-1 0 0 1 14 13)"/>
+            </svg>
+          </button>
+          <button class="btn weather__location-btn">
+            <img src="icons/weather/location.png" alt="location">
+          </button>
+        </div>
+        
+        <div class="weather__current">
+          <div class="card card-1">
+            <img id="currIco" class="card-1__icon" src="icons/weather/regular-weather.png" alt=" weatherIcon">
+            <h1 id="currTemp" class="card-1__temp">25.5°C</h1>
+            <div id="currDescr" class="card-1__descr">Cloudly</div>
+            <hr class="card-1__hr">
+            <div class="card-1__city-container">
+              <img src="icons/weather/content/light-mode/cityIco.png" alt="cityIco" class="card-1__city-ico">
+              <div id="currCity" class="card-1__city">Poznan</div>
+            </div>
+            <div class="card-1__date-container">
+              <img src="icons/weather/content/light-mode/dateIco.png" alt="dateIco" class="card-1__date-ico">
+              <div id="currDate" class="card-1__date">3 September, Sunday</div>
+            </div>
           </div>
-          <div class="promo__examples_desktop">
-            <img src="img/mainpage/promo-desktop.jpg" alt="desktop-promo" class="promo__examples_desktop-img">
+          <div class="card card-2">
+            <div class="card-2__sm">
+              <img src="icons/weather/content/light-mode/sunriseIco.png" alt="sunriseIco" class="card-2__sm-icon">
+              <div class="card-2__sm-details">
+                <div class="card-2__sm-descr">Sunrise</div>
+                <div id="currSunrise" class="card-2__sm-value">00:00</div>
+              </div>
+            </div>
+            <div class="card-2__sm">
+              <img src="icons/weather/content/light-mode/sunsetIco.png" alt="sunsetIco" class="card-2__sm-icon">
+              <div class="card-2__sm-details">
+                <div class="card-2__sm-descr">Sunset</div>
+                <div id="currSunset" class="card-2__sm-value">24:00</div>
+              </div>
+            </div>
+            <div class="card-2__sm">
+              <img src="icons/weather/content/light-mode/humidityIco.png" alt="humidityIco" class="card-2__sm-icon">
+                <div class="card-2__sm-details">
+                  <div class="card-2__sm-descr">Humidity</div>
+                  <div id="currHumidity" class="card-2__sm-value">48%</div>
+                </div>
+            </div>
+            <div class="card-2__sm">
+              <img src="icons/weather/content/light-mode/windIco.png" alt="windIco" class="card-2__sm-icon">
+                <div class="card-2__sm-details">
+                  <div class="card-2__sm-descr">Wind Speed</div>
+                  <div id="currWind" class="card-2__sm-value">33 km/h</div>
+                </div>
+            </div>
+            <div class="card-2__sm">
+              <img src="icons/weather/content/light-mode/visibilityIco.png" alt="visibilityIco" class="card-2__sm-icon">
+                <div class="card-2__sm-details">
+                  <div class="card-2__sm-descr">Visibility</div>
+                  <div id="currVisibility" class="card-2__sm-value">0 km</div>
+                </div>
+            </div>
+            <div class="card-2__sm">
+              <img src="icons/weather/content/light-mode/pressureIco.png" alt="pressureIco" class="card-2__sm-icon">
+                <div class="card-2__sm-details">
+                  <div class="card-2__sm-descr">Pressure</div>
+                  <div id="currPressure" class="card-2__sm-value">1000 hPa</div>
+                </div>
+            </div>
           </div>
-        </div> --></div></section><script src="js/script.js"></script></body></html>
+          <div class="card card-3">
+            <div class="card-3__sm">
+              <div class="card-3__sm-datetime-container">
+                <div class="card-3__sm-date">Sunday</div>
+                <div class="card-3__sm-time">17:00</div>
+              </div>
+              <div class="card-3__sm-temp">27.7°C</div>
+            </div>
+            <div class="card-3__sm">
+              <div class="card-3__sm-datetime-container">
+                <div class="card-3__sm-date">Sunday</div>
+                <div class="card-3__sm-time">20:00</div>
+              </div>
+              <div class="card-3__sm-temp">25.7°C</div>
+            </div>
+            <div class="card-3__sm">
+              <div class="card-3__sm-datetime-container">
+                <div class="card-3__sm-date">Sunday</div>
+                <div class="card-3__sm-time">23:00</div>
+              </div>
+              <div class="card-3__sm-temp">22.7°C</div>
+            </div>
+            <div class="card-3__sm">
+              <div class="card-3__sm-datetime-container">
+                <div class="card-3__sm-date">Monday</div>
+                <div class="card-3__sm-time">02:00</div>
+              </div>
+              <div class="card-3__sm-temp">17.7°C</div>
+            </div>
+            <div class="card-3__sm">
+              <div class="card-3__sm-datetime-container">
+                <div class="card-3__sm-date">Monday</div>
+                <div class="card-3__sm-time">05:00</div>
+              </div>
+              <div class="card-3__sm-temp">19.7°C</div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+
+
+
+
+    <script src="js/script.js"></script>
+  </body>
+  </html>
