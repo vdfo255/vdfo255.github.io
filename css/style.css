@@ -301,13 +301,14 @@ template {
   font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
-  font-weight: 500;
+  color: #1b1b1b;
+  font-weight: 400;
   font-size: 1rem;
 }
 
 .container {
   margin: 0 auto;
-  width: 1080px;
+  width: 1144px;
 }
 
 .btn {
@@ -406,7 +407,7 @@ aside.closed .aside__swipe {
 
 .weather {
   height: 100vh;
-  background: lightgrey;
+  background: #F2F5F5;
   background: url("https://4kwallpapers.com/images/wallpapers/sunset-evening-sky-clouds-sun-behind-clouds-dramatic-1920x1080-9158.jpg") center center/cover no-repeat;
 }
 .weather__search {
@@ -418,7 +419,7 @@ aside.closed .aside__swipe {
 .weather__search-input {
   padding: 0.5rem 1rem;
   width: 30rem;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(237, 237, 237, 0.65);
   color: #404040;
   font-size: 1.25rem;
   border: none;
@@ -434,11 +435,10 @@ aside.closed .aside__swipe {
 .card-1 {
   display: block;
   padding: 1rem 1.25rem;
-  width: 242px;
+  width: 258px;
   height: 372px;
-  backdrop-filter: blur(11.5px);
-  -webkit-backdrop-filter: blur(11.5px);
-  border: 0.1rem solid rgba(255, 255, 255, 0.55);
+  border: 0.1rem solid rgba(0, 0, 0, 0.25);
+  background-color: rgba(237, 237, 237, 0.65);
   border-radius: 0.75rem;
 }
 .card-1__icon {
@@ -448,13 +448,14 @@ aside.closed .aside__swipe {
 .card-1__temp {
   margin: 1rem 0.875rem;
   font-size: 2rem;
+  font-weight: 500;
 }
 .card-1__descr {
   margin: 1rem 0.875rem;
 }
 .card-1__hr {
   margin: 1rem 0.875rem;
-  border: 0.1rem solid rgba(255, 255, 255, 0.55);
+  border: 0.1rem solid rgba(0, 0, 0, 0.25);
   border-bottom: none;
 }
 .card-1__city-container {
@@ -476,18 +477,16 @@ aside.closed .aside__swipe {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  width: 500px;
+  width: 532px;
   height: 372px;
 }
 .card-2__sm {
   padding: 1rem 1.25rem;
-  width: 242px;
+  width: 258px;
   display: flex;
   flex-direction: row;
-  border: 0.1rem solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(237, 237, 237, 0.65);
   border-radius: 0.75rem;
-  backdrop-filter: blur(11.5px);
-  -webkit-backdrop-filter: blur(11.5px);
 }
 .card-2__sm-icon {
   margin: auto 0;
@@ -506,12 +505,10 @@ aside.closed .aside__swipe {
 }
 .card-3 {
   padding: 1rem 1.25rem;
-  width: 242px;
+  width: 258px;
   height: 372px;
-  border: 0.1rem solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(237, 237, 237, 0.65);
   border-radius: 0.75rem;
-  backdrop-filter: blur(11.5px);
-  -webkit-backdrop-filter: blur(11.5px);
 }
 .card-3__sm {
   display: flex;
@@ -525,4 +522,10 @@ aside.closed .aside__swipe {
 }
 .card-3__sm-date {
   font-size: 0.875rem;
+}
+.card-3__sm-temp {
+  font-weight: 500;
+}
+.card .cardTitleCol {
+  color: #535353;
 }
