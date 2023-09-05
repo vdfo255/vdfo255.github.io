@@ -12,16 +12,6 @@
   </head>
 
   <body>
-    <!-- <nav class="nav">
-      <a class="nav__logo" href="/">
-        <img class="nav__logo-img" src="icons/assets/logo/logo-black.png" alt="logo">
-      </a>
-      <div class="nav__links">
-        <a href="#" class="btn btn-signin nav__links-signin">Sign in</a>
-        <a href="#" class="btn btn-signup nav__links-signup">Sign up</a>
-      </div>
-    </nav> -->
-
     <aside class="aside closed">
       <div class="aside__wrapper aside__wrapper-start">
         <div id="themeSwitcher" href="" class="aside__item-link">
@@ -82,7 +72,7 @@
     <section class="weather">
       <div class="container">
         <div class="weather__search">
-          <input type="text" class="weather__search-input" placeholder="Poznan...">
+          <input type="text" class="weather__search-input" placeholder="Kyiv">
           <button class="btn weather__search-btn">
             <svg width="32px" height="32px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none">
               <path stroke="#535358" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M28 27l-7.5-7.5"/>
@@ -96,9 +86,10 @@
         
         <div class="weather__current">
           <div class="card card-1">
-            <img id="currIco" class="card-1__icon" src="icons/weather/regular-weather.png" alt=" weatherIcon">
-            <h1 id="currTemp" class="card-1__temp">25.5°C</h1>
+            <img id="currIco" class="card-1__icon" src="icons/weather/weather-ico/d-clear-sky.png" alt=" weatherIcon">
             <div id="currDescr" class="card-1__descr">Cloudly</div>
+            <h1 id="currTemp" class="card-1__temp">25.5°C</h1>
+            <div id="currFeelsLike" class="card-1__feels-like">Feels like: 25.5°C</div>
             <hr class="card-1__hr">
             <div class="card-1__city-container">
               <img src="icons/weather/content/light-mode/cityIco.png" alt="cityIco" class="card-1__city-ico">
@@ -106,7 +97,7 @@
             </div>
             <div class="card-1__date-container">
               <img src="icons/weather/content/light-mode/dateIco.png" alt="dateIco" class="card-1__date-ico">
-              <div id="currDate" class="card-1__date">3 September, Sunday</div>
+              <div id="currDate" class="card-1__date">Sep 05 2023</div>
             </div>
           </div>
           <div class="card card-2">
@@ -191,10 +182,18 @@
             </div>
           </div>
         </div>
-
-
       </div>
     </section>
+
+    <div class="modal__alert">
+      <img src="icons/weather/alert.png" alt="alert" class="modal__alert-img">
+      <div class="modal__alert-descr">
+        Weather is not found. 
+        <br>
+        Please check it for correct city name and try again.
+      </div>
+      <button class="btn btn-alert-close">Close</button>
+    </div>
 
 
 
