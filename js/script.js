@@ -1,5 +1,6 @@
+
 window.addEventListener('DOMContentLoaded', function() {
-    
+  
   //! ============= ASIDE CLOSE/OPEN =============
   const asideBar = document.querySelector('.aside'),
     asideCloseBtn = asideBar.querySelector('.aside__swipe'),
@@ -21,6 +22,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
 
   //! ============= WEATHER FETCHING & DISPLAYING =============
+  //! FOR EXPORT FOR EXPORT FOR EXPORT FOR EXPORT FOR EXPORT FOR EXPORT FOR EXPORT 
   const WEATHER_APIKEY = 'e732a92c66574d856b927e390c09674e',
     searchBar = document.querySelector('.weather__search-input'),
     searchBtn = document.querySelector('.weather__search-btn'),  
@@ -103,6 +105,7 @@ window.addEventListener('DOMContentLoaded', function() {
   }
   fetchCurrWeather('Kyiv');
 
+
   //* ========== fetching CURRENT weather BY COORDINATES ==========
   function fetchCurrWeatherByCoords(lat, lon) {
     fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}}&units=metric&appid=${WEATHER_APIKEY}`) //? https://api.openweathermap.org/data/2.5/weather?q=poznan&units=metric&appid=e732a92c66574d856b927e390c09674e
@@ -128,7 +131,8 @@ window.addEventListener('DOMContentLoaded', function() {
       {icon, description} = data.weather[0],
       {sunrise, sunset} = data.sys;
 
-    //* ========== converting sunset & sunrise ms to time ==========
+
+    //! FOR EXPORT FOR EXPORT FOR EXPORT FOR EXPORT FOR EXPORT FOR EXPORT FOR EXPORT 
     function msToHours(ms) {
       let hours = Math.floor( (ms / (1000 * 60 * 60) %  24) ),
         minutes = Math.floor( (ms / 1000 / 60) % 60),
@@ -139,13 +143,50 @@ window.addEventListener('DOMContentLoaded', function() {
       return `${formattedHours}:${formattedMinutes}`;
     }
 
+    //! FOR EXPORT FOR EXPORT FOR EXPORT FOR EXPORT FOR EXPORT FOR EXPORT FOR EXPORT 
+    function getCurrFormattedDate() {
+      const daysOfWeek = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ];
+      const monthOfYear = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+      ];
+    
+      const currentDate = new Date();
+      const month = currentDate.getMonth();
+      const date = currentDate.getDate();
+      const day = currentDate.getDay();
+    
+      const currDate = `${date} ${monthOfYear[month]}, ${daysOfWeek[day]}`;
+    
+      return { currDate };
+    }
+    
     // currWeatherIco.src = `https://openweathermap.org/img/wn/${icon}.png`;
     currWeatherIco.src = `icons/weather/weather-ico/${weatherIcons[icon]}.png`;
     currWeahterDescr.innerText = description;
     currWeahterTemp.innerText = `${temp} °C`;
     currWeahterFeelsLike.innerText = `Feels like: ${feels_like} °C`;
     currWeatherCity.innerText = name;
-    currWeatherDate.innerText = new Date().toString().split(' ').splice(1,3).join(' ');
+    // currWeatherDate.innerText = new Date().toString().split(' ').splice(1,3).join(' ');
+    currWeatherDate.innerText = getCurrFormattedDate().currDate;
     currWeatherSunrise.innerText = msToHours(sunrise);
     currWeatherSunset.innerText = msToHours(sunset);
     currWeatherHumidity.innerText = `${humidity} %`;
