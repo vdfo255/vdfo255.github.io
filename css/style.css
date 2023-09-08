@@ -467,11 +467,11 @@ aside.closed .aside__swipe {
   width: 6rem;
 }
 .card-1__descr {
-  margin: 1rem 0.875rem;
+  margin: 0.5rem 0.875rem 1rem;
   text-transform: capitalize;
 }
 .card-1__temp {
-  margin: 1rem 0.875rem 0;
+  margin: 0.5rem 0.875rem 0;
   font-size: 2rem;
   font-weight: 500;
 }
