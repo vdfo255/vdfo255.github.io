@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -84,102 +84,115 @@
           </button>
         </div>
         
+        <div class="heading">Today's Weather Overview</div>
         <div class="weather__current">
           <div class="card card-1">
             <img id="currIco" class="card-1__icon" src="icons/weather/weather-ico/d-clear-sky.png" alt=" weatherIcon">
-            <div id="currDescr" class="card-1__descr">Cloudly</div>
-            <h1 id="currTemp" class="card-1__temp">25.5°C</h1>
-            <div id="currFeelsLike" class="card-1__feels-like">Feels like: 25.5°C</div>
-            <hr class="card-1__hr">
+            <div id="currDescr" class="card-1__descr dynamic-data">Cloudly</div>
+            <h1 id="currTemp" class="card-1__temp dynamic-data">25.5°C</h1>
+            <div id="currFeelsLike" class="card-1__feels-like dynamic-data">Feels like: 22.5°C</div>
+            <div class="card-1__divider"></div>
             <div class="card-1__city-container">
               <img src="icons/weather/content/light-mode/cityIco.png" alt="cityIco" class="card-1__city-ico">
-              <div id="currCity" class="card-1__city">Poznan</div>
+              <div id="currCity" class="card-1__city dynamic-data">Kyiv</div>
             </div>
             <div class="card-1__date-container">
               <img src="icons/weather/content/light-mode/dateIco.png" alt="dateIco" class="card-1__date-ico">
-              <div id="currDate" class="card-1__date">7 September, Thursday</div>
+              <div id="currDate" class="card-1__date dynamic-data">7 September, Thursday</div>
             </div>
           </div>
           <div class="card card-2">
             <div class="card-2__sm">
               <img src="icons/weather/content/light-mode/sunriseIco.png" alt="sunriseIco" class="card-2__sm-icon">
               <div class="card-2__sm-details">
-                <div class="card-2__sm-descr cardTitleCol">Sunrise</div>
-                <div id="currSunrise" class="card-2__sm-value">00:00</div>
+                <div class="card-2__sm-descr">Sunrise</div>
+                <div id="currSunrise" class="card-2__sm-value dynamic-data">00:00</div>
               </div>
             </div>
             <div class="card-2__sm">
               <img src="icons/weather/content/light-mode/sunsetIco.png" alt="sunsetIco" class="card-2__sm-icon">
               <div class="card-2__sm-details">
-                <div class="card-2__sm-descr cardTitleCol">Sunset</div>
-                <div id="currSunset" class="card-2__sm-value">24:00</div>
+                <div class="card-2__sm-descr ">Sunset</div>
+                <div id="currSunset" class="card-2__sm-value dynamic-data">24:00</div>
               </div>
             </div>
             <div class="card-2__sm">
               <img src="icons/weather/content/light-mode/humidityIco.png" alt="humidityIco" class="card-2__sm-icon">
                 <div class="card-2__sm-details">
-                  <div class="card-2__sm-descr cardTitleCol">Humidity</div>
-                  <div id="currHumidity" class="card-2__sm-value">48%</div>
+                  <div class="card-2__sm-descr ">Humidity</div>
+                  <div id="currHumidity" class="card-2__sm-value dynamic-data">48%</div>
                 </div>
             </div>
             <div class="card-2__sm">
               <img src="icons/weather/content/light-mode/windIco.png" alt="windIco" class="card-2__sm-icon">
                 <div class="card-2__sm-details">
-                  <div class="card-2__sm-descr cardTitleCol">Wind Speed</div>
-                  <div id="currWind" class="card-2__sm-value">33 km/h</div>
+                  <div class="card-2__sm-descr ">Wind Speed</div>
+                  <div id="currWind" class="card-2__sm-value dynamic-data">33 km/h</div>
                 </div>
             </div>
             <div class="card-2__sm">
               <img src="icons/weather/content/light-mode/visibilityIco.png" alt="visibilityIco" class="card-2__sm-icon">
                 <div class="card-2__sm-details">
-                  <div class="card-2__sm-descr cardTitleCol">Visibility</div>
-                  <div id="currVisibility" class="card-2__sm-value">0 km</div>
+                  <div class="card-2__sm-descr ">Visibility</div>
+                  <div id="currVisibility" class="card-2__sm-value dynamic-data">0 km</div>
                 </div>
             </div>
             <div class="card-2__sm">
               <img src="icons/weather/content/light-mode/pressureIco.png" alt="pressureIco" class="card-2__sm-icon">
                 <div class="card-2__sm-details">
-                  <div class="card-2__sm-descr cardTitleCol">Pressure</div>
-                  <div id="currPressure" class="card-2__sm-value">1000 hPa</div>
+                  <div class="card-2__sm-descr ">Pressure</div>
+                  <div id="currPressure" class="card-2__sm-value dynamic-data">1000 hPa</div>
                 </div>
             </div>
           </div>
-          <div class="card card-3">
+           <div class="card card-3">
             <div class="card-3__sm">
               <div class="card-3__sm-datetime-container">
-                <div class="card-3__sm-date cardTitleCol">Sunday</div>
-                <div class="card-3__sm-time">17:00</div>
+                <div id="hourDate" class="card-3__sm-date dynamic-data">Sunday</div>
+                <div id="hourTime" class="card-3__sm-time dynamic-data">17:00</div>
               </div>
-              <div class="card-3__sm-temp">27.7°C</div>
+              <div id="hourTemp" class="card-3__sm-temp dynamic-data">27.7°C</div>
             </div>
             <div class="card-3__sm">
               <div class="card-3__sm-datetime-container">
-                <div class="card-3__sm-date cardTitleCol">Sunday</div>
-                <div class="card-3__sm-time">20:00</div>
+                <div id="hourDate" class="card-3__sm-date dynamic-data">Sunday</div>
+                <div id="hourTime" class="card-3__sm-time dynamic-data">20:00</div>
               </div>
-              <div class="card-3__sm-temp">25.7°C</div>
+              <div id="hourTemp" class="card-3__sm-temp dynamic-data">25.7°C</div>
             </div>
             <div class="card-3__sm">
               <div class="card-3__sm-datetime-container">
-                <div class="card-3__sm-date cardTitleCol">Sunday</div>
-                <div class="card-3__sm-time">23:00</div>
+                <div id="hourDate" class="card-3__sm-date dynamic-data">Sunday</div>
+                <div id="hourTime" class="card-3__sm-time dynamic-data">23:00</div>
               </div>
-              <div class="card-3__sm-temp">22.7°C</div>
+              <div id="hourTemp" class="card-3__sm-temp dynamic-data">22.7°C</div>
             </div>
             <div class="card-3__sm">
               <div class="card-3__sm-datetime-container">
-                <div class="card-3__sm-date cardTitleCol">Monday</div>
-                <div class="card-3__sm-time">02:00</div>
+                <div id="hourDate" class="card-3__sm-date dynamic-data">Monday</div>
+                <div id="hourTime" class="card-3__sm-time dynamic-data">02:00</div>
               </div>
-              <div class="card-3__sm-temp">17.7°C</div>
+              <div id="hourTemp" class="card-3__sm-temp dynamic-data">17.7°C</div>
             </div>
             <div class="card-3__sm">
               <div class="card-3__sm-datetime-container">
-                <div class="card-3__sm-date cardTitleCol">Monday</div>
-                <div class="card-3__sm-time">05:00</div>
+                <div id="hourDate" class="card-3__sm-date dynamic-data">Monday</div>
+                <div id="hourTime" class="card-3__sm-time dynamic-data">05:00</div>
               </div>
-              <div class="card-3__sm-temp">19.7°C</div>
+              <div id="hourTemp" class="card-3__sm-temp dynamic-data">19.7°C</div>
             </div>
+          </div>
+        </div>
+
+        <div class="heading">Next 5 Days Forecast</div>
+        <div class="weather__forecast">
+          <div class="weather__forecast-filter-container">
+            <div class="weather__forecast-filter-item">All Days</div>
+            <div class="weather__forecast-filter-item">9 Sep Sat</div>
+            <div class="weather__forecast-filter-item">10 Sep Sun</div>
+            <div class="weather__forecast-filter-item">11 Sep Mon</div>
+            <div class="weather__forecast-filter-item">12 Sep Tue</div>
+            <div class="weather__forecast-filter-item">13 Sep Wed</div>
           </div>
         </div>
       </div>
@@ -190,7 +203,7 @@
       <div class="modal__alert-descr">
         Weather is not found. 
         <br>
-        Please check it for correct city name and try again.
+        Please double-check the spelling and try again.
       </div>
       <button class="btn btn-alert-close">Close</button>
     </div>
@@ -199,7 +212,7 @@
 
 
     <script type="module" src="js/darkTheme.js"></script>
-    <script type="module" src="js/script.js"></script>
+    <script type="module" src="js/mainWeather.js"></script>
   </body>
   
   </html>

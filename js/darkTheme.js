@@ -1,12 +1,14 @@
 const themeSwitcher = document.querySelector('#themeSwitcher'),
 	icoThemeSwitcher = themeSwitcher.querySelector('img'),
 	spanThemeSwitcher = themeSwitcher.querySelector('span'),
-	textThemeSwitcher = themeSwitcher.querySelector('.aside__item-text');
+	textThemeSwitcher = themeSwitcher.querySelector('.aside__item-text'),
+	root = document.documentElement;
 
 themeSwitcher.addEventListener('click', (event) => {
-	document.body.classList.toggle('darkMode');
+	root.classList.toggle('light');
+	root.classList.toggle('dark');
 
-	if (document.body.classList.contains('darkMode')) {
+	if (root.classList.contains('dark')) {
 		icoThemeSwitcher.src = "icons/aside/moon.svg";
 		spanThemeSwitcher.innerHTML = 'Dark Mode';
 		textThemeSwitcher.innerHTML = 'Dark Mode';

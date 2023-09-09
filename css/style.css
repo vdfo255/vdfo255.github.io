@@ -297,6 +297,59 @@ template {
   display: none !important;
 }
 
+@media (prefers-color-scheme: light) {
+  :root {
+    --primary: #0f172a;
+    --secondary: #ffffff;
+    --tertiary: #f8fafc;
+    --accent: #64748b;
+    --bg: rgba(255, 255, 255, 0.5);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: #ffffff;
+    --secondary: #0f172a;
+    --tertiary: #1e293b;
+    --accent: #94a3b8;
+    --bg: rgba(255, 255, 255, 0.5);
+  }
+}
+html.light {
+  --primary: #0f172a;
+  --secondary: #ffffff;
+  --tertiary: #f8fafc;
+  --accent: #64748b;
+  --bg: rgba(255, 255, 255, 0.5);
+}
+
+html.dark {
+  --primary: #ffffff;
+  --secondary: #0f172a;
+  --tertiary: #1e293b;
+  --accent: #94a3b8;
+  --bg: rgba(255, 255, 255, 0.5);
+}
+
+.loading {
+  color: transparent !important;
+  border-radius: 12;
+  background-color: #0f172a;
+  user-select: none;
+  animation: loading-animation 0.6s infinite ease reverse;
+}
+
+@keyframes loading-animation {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.04;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
 * {
   font-family: "Poppins", sans-serif;
   margin: 0;
@@ -345,7 +398,7 @@ body {
 
 .aside {
   position: fixed;
-  padding: 3em 0.5rem 3rem;
+  padding: 3em 0.6rem 3rem;
   background-color: rgba(242, 245, 245, 0.7);
   height: 100vh;
   width: 10rem;
@@ -421,7 +474,7 @@ aside.closed .aside__swipe {
 .weather {
   height: 100vh;
   background: #F2F5F5;
-  background: url("https://4kwallpapers.com/images/wallpapers/sunset-evening-sky-clouds-sun-behind-clouds-dramatic-1920x1080-9158.jpg") center center/cover no-repeat;
+  background: url("../img/weather/sky-2.jpg") center center/cover no-repeat;
 }
 .weather__search {
   padding-top: 3rem;
@@ -453,97 +506,157 @@ aside.closed .aside__swipe {
 }
 
 .card-1 {
-  display: block;
-  padding: 1rem 1.25rem;
   width: 258px;
-  height: 372px;
-  border: 0.1rem solid rgba(0, 0, 0, 0.25);
-  background-color: rgba(237, 237, 237, 0.65);
-  border-radius: 0.75rem;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 16px 20px;
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  background-color: var(--bg);
 }
 .card-1__icon {
-  margin: 0 0.875rem;
-  height: 6rem;
-  width: 6rem;
+  height: 96px;
+  width: 96px;
+  margin: 14px 16px;
 }
 .card-1__descr {
-  margin: 0.5rem 0.875rem 1rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 400;
+  color: var(--primary);
+  width: auto;
+  margin: 0px 16px 0px 16px;
   text-transform: capitalize;
 }
-.card-1__temp {
-  margin: 0.5rem 0.875rem 0;
-  font-size: 2rem;
-  font-weight: 500;
-}
 .card-1__feels-like {
-  margin: 0 0.875rem 1rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 400;
+  color: var(--primary);
+  width: auto;
+  margin: 0px 16px 14px 16px;
 }
-.card-1__hr {
-  margin: 0 0.875rem;
-  border: 0.1rem solid rgba(0, 0, 0, 0.25);
-  border-bottom: none;
+.card-1__temp {
+  font-family: "Poppins", sans-serif;
+  font-size: 36px;
+  line-height: 1.2;
+  font-weight: 500;
+  color: var(--primary);
+  width: auto;
+  margin: 14px 16px;
 }
-.card-1__city-container, .card-1__date-container {
-  margin: 1rem 0.875rem;
+.card-1__city-container {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  margin: 14px 16px;
 }
+.card-1__date-container {
+  display: flex;
+  align-items: center;
+  margin: 0px 16px 14px 16px;
+}
+.card-1__city, .card-1__date {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 400;
+  color: var(--primary);
+  width: 100%;
+  margin-left: 12px;
+}
+.card-1__divider {
+  height: 1px;
+  margin: 6px 16px;
+  background-color: var(--primary);
+}
+
 .card-2 {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   width: 532px;
-  height: 372px;
+  height: auto;
 }
 .card-2__sm {
-  padding: 1rem 1.25rem;
   width: 258px;
+  height: auto;
   display: flex;
-  flex-direction: row;
-  background-color: rgba(237, 237, 237, 0.65);
-  border-radius: 0.75rem;
+  align-items: center;
+  padding: 16px 20px;
+  border-radius: 8px;
+  background-color: var(--bg);
 }
 .card-2__sm-icon {
-  margin: auto 0;
-  height: 40px;
-  width: 40px;
+  height: 48px;
+  width: 48px;
 }
 .card-2__sm-details {
-  margin-left: 2rem;
   display: flex;
-  flex: 1;
   flex-direction: column;
-  justify-content: center;
+  width: 100%;
+  margin-left: 12px;
+}
+.card-2__sm-descr {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 400;
+  color: var(--accent);
+  margin: 14px 16px 12px 16px;
 }
 .card-2__sm-value {
-  font-size: 1.5rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 400;
+  color: var(--primary);
+  margin: 0px 16px 14px 16px;
 }
+
 .card-3 {
-  padding: 1rem 1.25rem;
   width: 258px;
-  height: 372px;
-  background-color: rgba(237, 237, 237, 0.65);
-  border-radius: 0.75rem;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 16px 20px;
+  border-radius: 8px;
+  background-color: var(--bg);
 }
 .card-3__sm {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  margin: 1rem 0.875rem;
+  justify-content: space-between;
+  margin: 14px 16px;
 }
 .card-3__sm-datetime-container {
-  width: 128px;
-  margin-right: 0.75rem;
+  margin-right: 12px;
 }
 .card-3__sm-date {
-  font-size: 0.875rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 400;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+.card-3__sm-time {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 400;
+  color: var(--primary);
 }
 .card-3__sm-temp {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 1.2;
   font-weight: 500;
-}
-.card .cardTitleCol {
-  color: #535353;
+  color: var(--primary);
 }
 
 .modal__alert {
@@ -572,6 +685,12 @@ aside.closed .aside__swipe {
   font-size: 1.25rem;
   font-weight: 500;
   text-align: center;
+  word-wrap: break-word;
+}
+.modal__alert-descr span {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  font-weight: 700;
 }
 
 .show {
