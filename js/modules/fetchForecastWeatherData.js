@@ -1,6 +1,6 @@
-// import { filterForecastWeatherData } from "./filterForecastWeatherData.js";
+import { filterForecastWeatherData } from "./filterForecastWeatherData.js";
 import { roundDegree, formatDate } from "./convertUnits.js";
-
+import { drawForecastWeatherGrafic } from "./drawForecastWeatherGrafic.js";
 
 export const fetchForecastWeatherData = async (data, key) => {
   const hourlyForecastWeatherDate = document.querySelectorAll("#hourDate");
@@ -27,7 +27,7 @@ export const fetchForecastWeatherData = async (data, key) => {
   }
 
   const fetchForecastWeatherData = await response.json();
-  // await filterForecastWeatherData(fetchForecastWeatherData);
+  await filterForecastWeatherData(fetchForecastWeatherData);
 
   for (let index = 0; index < 5; index++) {
     hourlyForecastWeatherDate[index].innerHTML = await formatDate(fetchForecastWeatherData.list[index].dt, "day");
@@ -35,11 +35,29 @@ export const fetchForecastWeatherData = async (data, key) => {
     hourlyForecastWeatherTemp[index].innerHTML = await roundDegree(fetchForecastWeatherData.list[index].main.temp);
   }
 
+
+  //! OLD
+  // const graficDataSet = [];
   // for (let index = 0; index < 40; index++) {
-  //   dailyWeatherForecastDate[index].innerHTML = await formatDate(fetchForecastWeatherData.list[index].dt, "short");
-  //   dailyWeatherForecastTime[index].innerHTML = await formatDate(fetchForecastWeatherData.list[index].dt, "hour");
-  //   dailyWeatherForecastIcon[index].src = `src/img/static/${fetchForecastWeatherData.list[index].weather[0].icon}.svg`;
-  //   dailyWeatherForecastTemperature[index].innerHTML = await roundDegree(fetchForecastWeatherData.list[index].main.temp);
-  //   dailyWeatherForecastDescription[index].innerHTML = fetchForecastWeatherData.list[index].weather[0].main;
+  //   const datetimeSet = `${await formatDate(fetchForecastWeatherData.list[index].dt, "short")}  ${await formatDate(fetchForecastWeatherData.list[index].dt, "hour")}`;
+  //   const temporaryDataSet = {
+  //     'date' : datetimeSet,
+  //     'temp' : await roundDegree(fetchForecastWeatherData.list[index].main.temp),
+  //   };
+
+  //   graficDataSet.push(temporaryDataSet);
   // }
+  // console.log(graficDataSet);
+  // await drawForecastWeatherGrafic(graficDataSet, 'all');
+
+
+  //! NEW 
+  const graficDataSet = {};
+  for (let index = 0; index < 40; index++) {
+    const datetimeSet = `${await formatDate(fetchForecastWeatherData.list[index].dt, "short")}  ${await formatDate(fetchForecastWeatherData.list[index].dt, "hour")}`;
+    const temp = await roundDegree(fetchForecastWeatherData.list[index].main.temp);
+    graficDataSet[datetimeSet] = temp.slice(0, -2);
+  }
+  console.log(graficDataSet);
+  await drawForecastWeatherGrafic(graficDataSet);
 }
